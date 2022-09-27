@@ -19,9 +19,24 @@ let magicJS = MagicJS(scriptName, "INFO");
           obj.iosBalance = 999;
           obj.voucherBalance = 999;
           obj.beanVoucherBalance = 999;
+          obj.isNewUserVip = true;
           obj.vipStatus = 1;
           obj.expiresDay = 999;
           obj.isSVIPUser = true;
+          response = { body: JSON.stringify(obj) };
+        } catch (err) {
+          magicJS.logError(`追书神器去广告出现异常：${err}`);
+        }
+        break;
+      case /zhuishushenqi\.com\/user\/detail-info/.test(magicJS.request.url):
+        try {
+          let obj = JSON.parse(magicJS.response.body);
+          obj.exp = 999;
+          obj.rank = 999;
+          obj.lv = 999;
+          obj.vipLv = 999;
+          obj.vipExp = 999;
+          obj.type = "vip";
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`追书神器去广告出现异常：${err}`);
