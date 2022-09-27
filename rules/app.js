@@ -28,20 +28,7 @@ let magicJS = MagicJS(scriptName, "INFO");
           magicJS.logError(`追书神器去广告出现异常：${err}`);
         }
         break;
-      case /zhuishushenqi\.com\/user\/detail\-info/.test(magicJS.request.url):
-        try {
-          let obj = JSON.parse(magicJS.response.body);
-          obj.exp = 999;
-          obj.rank = 999;
-          obj.lv = 90;
-          obj.vipLv = 99;
-          obj.vipExp = 999;
-          obj.type = "normal";
-          response = { body: JSON.stringify(obj) };
-        } catch (err) {
-          magicJS.logError(`追书神器去广告出现异常：${err}`);
-        }
-        break;
+      
       // 口袋故事
      case /api\.idaddy\.cn/api\.php/.test(magicJS.request.url):  
         try {
