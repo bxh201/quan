@@ -1,4 +1,10 @@
-const scriptName = "App去除广告";
+/**
+* func:自制app优化策略-vip/去广告等
+* author: wooper
+* date: 20220927
+*/
+
+const scriptName = "App优化去除广告";
 let magicJS = MagicJS(scriptName, "INFO");
 
 (() => {
