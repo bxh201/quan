@@ -27,8 +27,18 @@ let magicJS = MagicJS(scriptName, "INFO");
           magicJS.logError(`追书神器去广告出现异常：${err}`);
         }
         break;
-      // 其他
-        
+      // 口袋故事
+     case /api\.idaddy\.cn/api\.php/.test(magicJS.request.url):  
+        try {
+          let objresponse = magicJS.response.body;
+          objresponse=objresponse.replace(/is_free":"0"/g, 'is_free":"1"');
+          objresponse=objresponse.replace(/is_auth":0/g, 'is_auth":1');
+          objresponse=objresponse.replace(/is_vip":0/g, 'is_vip":1');
+          response = { body: objresponse };
+        } catch (err) {
+          magicJS.logError(`口袋故事出现异常：${err}`);
+        }
+        break;
       default:
         magicJS.logWarning("触发意外的请求处理，请确认脚本或复写配置正常。");
         break;
