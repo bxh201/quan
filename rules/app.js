@@ -12,25 +12,48 @@ let magicJS = MagicJS(scriptName, "INFO");
   if (magicJS.isResponse) {
     switch (true) {
       // 追书神器
-      case /zhuishushenqi\.com\/user\/account/.test(magicJS.request.url):
+      case /zhuishushenqi\.com\/user/.test(magicJS.request.url):
         try {
-          let obj = JSON.parse(magicJS.response.body);
-          obj.balance = 999;
-          obj.iosBalance = 999;
-          obj.voucherBalance = 999;
-          obj.beanVoucherBalance = 999;
-          obj.isNewUserVip = true;
-          obj.vipStatus = 1;
-          obj.expiresDay = 999;
-          obj.isSVIPUser = true;
-          response = { body: JSON.stringify(obj) };
+          let objresponse = magicJS.response.body;
+          objresponse=objresponse.replace(/balance":0/g, 'balance":999');
+          objresponse=objresponse.replace(/iosBalance":0/g, 'iosBalance":999');
+          objresponse=objresponse.replace(/isNewUserVip":false/g, 'isNewUserVip":true');
+          objresponse=objresponse.replace(/vipId":""/g, 'vipId":"10086"');
+          objresponse=objresponse.replace(/vipStatus":0/g, 'vipStatus":1');
+          objresponse=objresponse.replace(/expiresDay":0/g, 'expiresDay":999');
+          objresponse=objresponse.replace(/isSVIPUser":false/g, 'isSVIPUser":true');
+          
+          objresponse=objresponse.replace(/nickname":"zssq0835"/g, 'nickname":"wooper"');
+          objresponse=objresponse.replace(/type":"normal"/g, 'type":"vip"');
+          
+          objresponse=objresponse.replace(/vipExpire":"2022/g, 'vipExpire":"2099');
+          
+          response = { body: objresponse };
         } catch (err) {
           magicJS.logError(`追书神器去广告出现异常：${err}`);
         }
         break;
+        
+//      case /zhuishushenqi\.com\/user\/account/.test(magicJS.request.url):
+//         try {
+//           let obj = JSON.parse(magicJS.response.body);
+//           obj.balance = 999;
+//           obj.iosBalance = 999;
+//           obj.voucherBalance = 999;
+//           obj.beanVoucherBalance = 999;
+//           obj.isNewUserVip = true;
+//           obj.vipId = "10086";
+//           obj.vipStatus = 1;
+//           obj.expiresDay = 999;
+//           obj.isSVIPUser = true;
+//           response = { body: JSON.stringify(obj) };
+//         } catch (err) {
+//           magicJS.logError(`追书神器去广告出现异常：${err}`);
+//         }
+//         break;
       
       // 口袋故事
-     case /api\.idaddy\.cn/api\.php/.test(magicJS.request.url):  
+     case /api\.idaddy\.cn\/api\.php/.test(magicJS.request.url):  
         try {
           let objresponse = magicJS.response.body;
           objresponse=objresponse.replace(/is_free":"0"/g, 'is_free":"1"');
@@ -41,6 +64,8 @@ let magicJS = MagicJS(scriptName, "INFO");
           magicJS.logError(`口袋故事出现异常：${err}`);
         }
         break;
+        
+        
       default:
         magicJS.logWarning("触发意外的请求处理，请确认脚本或复写配置正常。");
         break;
