@@ -1,0 +1,12 @@
+{
+    "name": "自用脚本合集",
+    "description": "FIXME",
+    "UpdateTime": "2022-11-15",
+    "Author": "wooper",
+    "navigation": "nop",
+    "Description": "自用脚本合集",
+    "Image": "https://avatars.githubusercontent.com/u/2577327?s=40&v=4",
+    "task": [
+        "41 0,12,23 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_price.js, tag=京东保价, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true"
+    ]
+}
