@@ -65,6 +65,8 @@ let magicJS = MagicJS(scriptName, "INFO");
         }
         break;
         
+        // 趣听
+        
         
       default:
         magicJS.logWarning("触发意外的请求处理，请确认脚本或复写配置正常。");
