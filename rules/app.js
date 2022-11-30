@@ -66,7 +66,15 @@ let magicJS = MagicJS(scriptName, "INFO");
         break;
         
         // 趣听
-        
+      case /api.bspapp.com\/client/.test(magicJS.request.url):   
+        try{
+          let objresponse = magicJS.response.body;
+           objresponse=objresponse.replace(/is_silently":false/g, 'is_silently":true');
+          response = { body: objresponse };
+        }catch(err){
+          magicJS.logError(`趣听出现异常：${err}`);
+        }
+        break;
         
       default:
         magicJS.logWarning("触发意外的请求处理，请确认脚本或复写配置正常。");
