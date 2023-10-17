@@ -68,7 +68,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         break;
         
         // 趣听
-      case /api.bspapp.com\/client/.test(magicJS.request.url):   
+      case /api\.bspapp\.com\/client/.test(magicJS.request.url):   
         try{
           let objresponse = magicJS.response.body;
            objresponse=objresponse.replace(/is_silently":false/g, 'is_silently":true');
@@ -79,7 +79,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         break;
 
         // 大大羊毛-vip
-      case /ym2.dadawz.cn\/typechoUsers\/userStatus/.test(magicJS.request.url):   
+      case /ym2\.dadawz\.cn\/typechoUsers\/userStatus/.test(magicJS.request.url):   
         try{
           let objresponse = magicJS.response.body;
           objresponse=objresponse.replace(/is_vip":0/g, 'is_vip":1');
@@ -92,7 +92,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         }
         break;
         // 大大羊毛-评论可见
-      case /ym2.dadawz.cn\/typechoContents\/isCommnet/.test(magicJS.request.url):   
+      case /ym2\.dadawz\.cn\/typechoContents\/isCommnet/.test(magicJS.request.url):   
         try{
           let objresponse = magicJS.response.body;
           objresponse=objresponse.replace(/code":0/g, 'code":1');
