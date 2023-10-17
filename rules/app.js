@@ -4,7 +4,7 @@
  * @author wooper
  * @update 20231017
  * @version 1.0.0
-******************************************
+******************************************/
 
 const scriptName = "App优化去除广告";
 let magicJS = MagicJS(scriptName, "INFO");
