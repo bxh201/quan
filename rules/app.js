@@ -85,7 +85,6 @@ let magicJS = MagicJS(scriptName, "INFO");
           objresponse=objresponse.replace(/is_vip":0/g, 'is_vip":1');
           objresponse=objresponse.replace(/vip":0/g, 'vip":1');
           objresponse=objresponse.replace(/groupKey":"contributor"/g, 'groupKey":"administrator"');
-          magicJS.logError(`大大羊毛：${objresponse}`);
           response = { body: objresponse };
         }catch(err){
           magicJS.logError(`大大羊毛 出现异常：${err}`);
