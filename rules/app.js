@@ -100,6 +100,17 @@ let magicJS = MagicJS(scriptName, "INFO");
           magicJS.logError(`大大羊毛 出现异常：${err}`);
         }
         break;
+
+        // 优创
+       case /app\.ucgod\.cn\/user\//.test(magicJS.request.url):   
+        try{
+          let objresponse = magicJS.response.header;
+          magicJS.logError(`优创：${objresponse}`);
+           magicJS.logError(`优创：${magicJS.response.headers}`);
+        }catch(err){
+          magicJS.logError(`优创出现异常：${err}`);
+        }
+        break; 
         
       default:
         magicJS.logWarning("触发意外的请求处理，请确认脚本或复写配置正常。");
