@@ -104,9 +104,10 @@ let magicJS = MagicJS(scriptName, "INFO");
         // 优创
        case /app\.ucgod\.cn\/user\//.test(magicJS.request.url):   
         try{
-          let objresponse = magicJS.response.header;
-          magicJS.logError(`优创：${objresponse}`);
-           magicJS.logError(`优创：${magicJS.response.headers}`);
+          let objresponse = magicJS.response.headers;
+          let resp2 = JSON.stringify(objresponse);
+          magicJS.logError(`优创：${objresponse.cookie}`);
+           magicJS.logError(`优创：${resp2}`);
         }catch(err){
           magicJS.logError(`优创出现异常：${err}`);
         }
