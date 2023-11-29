@@ -106,7 +106,6 @@ let magicJS = MagicJS(scriptName, "INFO");
         try{
           let objresponse = magicJS.response.headers;
           let resp2 = JSON.stringify(objresponse);
-          magicJS.logError(`优创：${objresponse.cookie}`);
            magicJS.logError(`优创：${resp2}`);
         }catch(err){
           magicJS.logError(`优创出现异常：${err}`);
