@@ -34,8 +34,7 @@ HOST-SUFFIX,tnc3-bjlgy.bytedance.com,广告屏蔽
 HOST-SUFFIX,qzs.gdtimg.com,广告屏蔽
 HOST-SUFFIX,api.onesignal.com,广告屏蔽
 HOST-SUFFIX,net.mintegral.net,广告屏蔽
-
-HOST-KEYWORD,tnc3-alisc,广告屏蔽
-HOST-KEYWORD,tnc11-alisc,广告屏蔽
-HOST-KEYWORD,tnc3-aliec,广告屏蔽
-HOST-KEYWORD,tnc11-aliec,广告屏蔽
+HOST,tnc3-alisc1.zijieapi.com,广告屏蔽
+HOST,tnc11-alisc1.zijieapi.com,广告屏蔽
+HOST,tnc3-aliec2.zijieapi.com,广告屏蔽
+HOST,tnc11-aliec2.zijieapi.com,广告屏蔽
