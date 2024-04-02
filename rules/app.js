@@ -101,6 +101,26 @@ let magicJS = MagicJS(scriptName, "INFO");
         }
         break;
 
+        case /ym2\.dadawz\.cn\/typechoContents\/contentsList/.test(magicJS.request.url):   
+        try{
+          let objresponse = magicJS.response.body;
+          objresponse=objresponse.replace(/isswiper":1/g, 'isswiper":0');
+          response = { body: objresponse };
+        }catch(err){
+          magicJS.logError(`大大羊毛 出现异常：${err}`);
+        }
+        break;
+        
+        case /ym2\.dadawz\.cn\/typechoContents\/contentsInfo/.test(magicJS.request.url):   
+        try{
+          let objresponse = magicJS.response.body;
+          objresponse=objresponse.replace(/isswiper":1/g, 'isswiper":0');
+          response = { body: objresponse };
+        }catch(err){
+          magicJS.logError(`大大羊毛 出现异常：${err}`);
+        }
+        break;
+
         // 优创
        case /app\.ucgod\.cn\/user\//.test(magicJS.request.url):   
         try{
